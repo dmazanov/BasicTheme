@@ -1,0 +1,10 @@
+{
+  "name": "BasicTheme",
+  "version": "0.0.1",
+  "author": "Denis Mazanov",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "modernizr": "^3.5.0",
+    "normalize-css": "^7.0.0"
+  }
+}
