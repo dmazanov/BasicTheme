@@ -1,7 +1,8 @@
 "use strict";
 var gulp = require("gulp"),
 		sass = require("gulp-sass"),
-		autoprefixer = require("gulp-autoprefixer");
+		autoprefixer = require("gulp-autoprefixer"),
+		rename = require("gulp-rename");
 
 gulp.task("sass", function() {
 	return gulp.src("src/scss/**/*.scss")
