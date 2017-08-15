@@ -30,6 +30,7 @@ gulp.task('browser-sync', function() {
 			proxy: 'wp-basic-theme.loc/',
 		});
 	gulp.watch("src/scss/**/*.scss", ["sass"]);
+	gulp.watch("src/js/*.js").on("change", reload);
 });
 
 gulp.task("default", ["sass"]);
