@@ -3,12 +3,22 @@ var gulp = require("gulp"),
 		sass = require("gulp-sass"),
 		autoprefixer = require("gulp-autoprefixer"),
 		rename = require("gulp-rename"),
+		plumber = require("gulp-plumber"),
+		gutil = require("gulp-util"),
 		browserSync = require("browser-sync").create(),
 		reload = browserSync.reload;
 
+
+var onError = function(err) {
+	console.log("An error occurred:", gutil.colors.magenta(err.message));
+	gutil.beep();
+	this.emit("end");
+};
+
 gulp.task("sass", function() {
 	return gulp.src("src/scss/**/*.scss")
-		.pipe(sass().on("error", sass.logError))
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(sass())
 		.pipe(autoprefixer())
 		.pipe(gulp.dest("src/css"));
 });
