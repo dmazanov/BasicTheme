@@ -2,3 +2,5 @@
 node_modules
 src/bower_components
 src/css/maps
+dist
+screenshot.png
